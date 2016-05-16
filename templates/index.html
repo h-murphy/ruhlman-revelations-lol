@@ -1,6 +1,5 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-
 {% block title %}Ruhlman Revelations{% endblock %}
 
 {% block navbar %}
@@ -10,23 +9,42 @@
         </div>    
     </nav>
 {% endblock %}
-
 {% block content %}
+<table>
+<LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+
+    <tr>
+      <td id="sidebar">
+      <h2><a href="http://goo.gl/forms/IwJpRgbtWA/">Form</a></h2>
+      <h2><a href="http://cs.wellesley.edu/~namadeo/cs249/caveat.html">Caveats</a></h2>
+      <h2><a href="http://cs.wellesley.edu/~namadeo/cs249/final-writeup.html">About This Project
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br></a></h2></td>
+      <td>
+
+<div class="main">
     <div class="container">
-   		 <form action="/inputText" method="post">
-  			<input type="text" name=inputText></input>
- 			 <input type="submit" value="Search"></input>
-		</form>
+   		 
         <div class="row">
             {% for id in ids %}
                 <h2>Department work perceptions vs. Ruhlman reality</h2>
+                This tool compares text from the abstracts of all Ruhlman
+                presentations up until 2016, sectioned by the <br> department of the advisor,
+                to the text of student responses to the question "What do you think x-department<br>
+                does?" Sample responses were provided to respondants to encourage consistency.<br><br>
+                <form action="/inputText" method="post">
+  				This tool does not analyze phrases. Please enter a single word: <input type="text" name=inputText></input>
+ 			 	<input type="submit" value="Search"></input>
+			</form>
+                <h2>Graph of occurences of "{{inputText}}" per 100 words</h2>
                 <div id="{{id}}"></div>
             {% endfor %}
         </div>
-         <div>
-        </div>
     </div>
-
+</div>
+    </td>
+    </tr>
+  </table>
 <footer>
     <!-- D3.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
@@ -39,7 +57,6 @@
 
         var graphs = {{graphJSON | safe}};
         var ids = {{ids | safe}};
-        //var data = {{data | safe}}
         for(var i in graphs) {
             Plotly.plot(ids[i], // the ID of the div, created above
                         graphs[i].data,
