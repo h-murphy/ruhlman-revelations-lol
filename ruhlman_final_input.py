@@ -230,9 +230,9 @@ def make_bar_chart(inputText):
                                                 mode='markers',
                                                 name='Ruhlman',
                                                 marker=dict(
-                                                    color='rgba(204, 204, 204, 0.95)',
+                                                    color='rgba(78, 81, 82, 0.95)',
                                                     line=dict(
-                                                        color='rgba(217, 217, 217, 1.0)',
+                                                        color='rgba(78, 81, 82, 1.0)',
                                                         width=1,
                                                     ),
                                                     symbol='circle',
@@ -255,7 +255,7 @@ def make_bar_chart(inputText):
                                 color='rgb(102, 102, 102)',
                             ),
                             autotick=False,
-                            dtick=10,
+                            dtick=0.1,
                             ticks='outside',
                             tickcolor='rgb(102, 102, 102)',
                         ),
@@ -274,8 +274,8 @@ def make_bar_chart(inputText):
                         ),
                         width=800,
                         height=600,
-                        paper_bgcolor='rgb(238,232,170)',
-                        plot_bgcolor='rgb(255,255,240)',
+                        paper_bgcolor='rgb(250,250,250)',
+                        plot_bgcolor='rgb(250,250,250)',
                         hovermode='closest',
                         )
                 )
@@ -291,7 +291,7 @@ def index():
     #inputText = request.form['inputText']
     ids = []
     graphJSON = []
-    graphJSON = make_bar_chart('test')
+    graphJSON = make_bar_chart('experiment')
     ids = ["Department Work vs. Perceptions"]
     inputText = "testing"
     if request.method == 'POST':
@@ -306,8 +306,8 @@ def indexInput():
     #inputText = request.form['inputText']
     ids = []
     graphJSON = []
-    graphJSON = make_bar_chart('test')
-    inputText = "testing"
+    graphJSON = make_bar_chart('experiment')
+    inputText = "experiment"
     ids = ["Department Work vs. Perceptions"]
     if request.method == 'POST':
             inputText = request.form['inputText']
