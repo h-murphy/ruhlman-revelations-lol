@@ -1,0 +1,22 @@
+Please Note: Our “About this Project” write up is rendered as an HTML page linked from our flask application, our caveat (limitations) and Form used to gather responses are located there as well. 
+
+
+Files in this Folder:
+
+revelations :
+This folder contains all the files necessary to run the flask app, including the python code, HTML templates, and json files. Please note that this code should be run using Python 2.7
+
+analysisNotebook.ipynb :
+This notebook contains the preliminary analysis we performed on the data in order to create the json files for the flask application. We used the responses and ruhlman excel sheets to create the files. 
+
+Clustering.ipynb
+This notebook contains the analysis needed to find the Euclidean Distances between all the reposes and their abstracts, and the code for the graph. 
+
+responses.xlsx :
+This file contains the student responses we gathered to do our analysis. The se answers were submitted as responses to the google form that is linked within the flask application. 
+
+NOT INCLUDED BUT USED: 
+ruhlman.xlsx :
+This is the cleaned ruhlman dataset that we used to gather the abstract text of the ruhlman projects. I did not submit it because it would have taken up too much span on my server.
+
+ 
